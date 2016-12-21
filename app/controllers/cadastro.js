@@ -9,11 +9,19 @@ module.exports.cadastrar = function(application, req, res){
     req.assert('usuario', 'Campo usuario não pode ser vazio').notEmpty();
     req.assert('senha', 'Campo senha não pode ser vazio').notEmpty();
     req.assert('casa', 'Campo casa não pode ser vazio').notEmpty();
-    
+
     var erros = req.validationErrors();
 
     if(erros){
         res.render('cadastro', {validacao: erros, dadosForm: dadosForm});
         return;
     }
+
+    var connection = application.config.dbConnection;
+
+    var UsuariosDAO = new application.app.models.UsuariosDAO(connection);
+
+    UsuariosDAO.inserirUsuario(dadosForm);
+
+
 }
