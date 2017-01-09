@@ -36,13 +36,6 @@ app.use(expressSession({
 	saveUninitialize: false
 }));
 
-/* configurar o middleware express-session */
-app.use(expressSession({
-	secret:'fhdajfhdjsafhsafjkd',
-	resave: false,
-	saveUninitialize: false
-}));
-
 /* efetua o autoload das rotas, dos models e dos controllers para o objeto app */
 consign()
 	.include('app/routes')

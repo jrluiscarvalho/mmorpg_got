@@ -23,5 +23,6 @@ module.exports.cadastrar = function(application, req, res){
 
     UsuariosDAO.inserirUsuario(dadosForm);
 
+    res.render('jogo');
 
 }
