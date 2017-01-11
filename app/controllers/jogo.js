@@ -25,3 +25,12 @@ module.exports.sair = function(application, req, res){
     });
 
 }
+
+module.exports.suditos = function(application, req, res){
+    res.render('aldeoes', {validacao:{}});
+
+}
+
+module.exports.pergaminhos = function(application, req, res){
+    res.render('pergaminhos', {validacao:{}});
+}
